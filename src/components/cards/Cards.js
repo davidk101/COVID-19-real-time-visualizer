@@ -1,10 +1,10 @@
 import React from 'react'
 import { Card, CardContent, Typography, Grid } from '@material-ui/core'
-import styles from './cards.module.css'
+import styles from './Cards.module.css'
 import CountUp from "react-countup" // counter animation
 import cx from 'classnames' // links classes together to apply styling for  multiple classes
 
-const cards = ({data: {confirmed, recovered, deaths, lastUpdate}}) => { // destructuring data and then another destructuring
+const Cards = ({data: {confirmed, recovered, deaths, lastUpdate}}) => { // destructuring data and then another destructuring
 
     if(!confirmed){ // data.confirmed if not destructured
         return 'Error retrieving data from API'
@@ -69,4 +69,4 @@ const cards = ({data: {confirmed, recovered, deaths, lastUpdate}}) => { // destr
     )
 }
 
-export default cards
+export default Cards
