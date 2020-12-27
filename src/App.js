@@ -18,11 +18,11 @@ class App extends React.Component{ /* App.js is the only class-based component f
 
     render(){
 
-        const {data} = this.state // destructuring
+        const {data} = this.state // destructuring 'data'
 
         return(
         <div className = {styles.container}>
-            <cards data = {data}/> {/* passing data as props to cards component*/}
+            <cards data = {data}/> {/* passing data as props to 'cards' component*/}
             <country />
             <chart />
         </div>
