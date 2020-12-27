@@ -2,6 +2,7 @@ import React from 'react'
 import { Card, CardContent, Typography, Grid } from 'material-ui'
 import styles from './cards.module.css'
 import CountUp from "react-countup" // counter animation
+import cx from 'classnames' // links classes together to apply styling for  multiple classes
 
 const cards = ({data: {confirmed, recovered, deaths, lastUpdate}}) => { // destructuring data and then another destructuring
 
@@ -12,7 +13,7 @@ const cards = ({data: {confirmed, recovered, deaths, lastUpdate}}) => { // destr
     return (
         <div className = {styles.container}>
             <Grid container spacing = {3} justify = "center">
-                <Grid item component = {Card}>
+                <Grid item component = {Card} xs = {12} md = {3} className = {cx(styles.card, styles.infected)}>
                     <CardContent>
                         <Typography color = "textSecondary" gutterBottom>
                             Infected
@@ -29,7 +30,7 @@ const cards = ({data: {confirmed, recovered, deaths, lastUpdate}}) => { // destr
                         </Typography>
                     </CardContent>
                 </Grid>
-                <Grid item component = {Card}>
+                <Grid item component = {Card} xs = {12} md = {3} className = {cx(styles.card, styles.recovered)}>
                     <CardContent>
                         <Typography color = "textSecondary" gutterBottom>
                             Recovered
@@ -46,7 +47,7 @@ const cards = ({data: {confirmed, recovered, deaths, lastUpdate}}) => { // destr
                         </Typography>
                     </CardContent>
                 </Grid>
-                <Grid item component = {Card}>
+                <Grid item component = {Card} xs = {12} md = {3} className = {cx(styles.card, styles.deaths)}>
                     <CardContent>
                         <Typography color = "textSecondary" gutterBottom>
                             Deaths
