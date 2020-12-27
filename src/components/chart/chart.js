@@ -16,6 +16,7 @@ const chart = () => {
         fetchAPI()
     })
 
+    // returns an array with 71 objects from dailyData API call
     const lineChart = (
 
         dailyData[0] ? (<Line >
