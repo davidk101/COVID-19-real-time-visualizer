@@ -1,9 +1,9 @@
 import React, {useState, useEffect} from 'react'
 import {fetchDailyData} from "../../api";
-import {Line, Bar} from 'react-chartjs-2' // react wrapper for chart.js
+import {Line} from 'react-chartjs-2' // react wrapper for chart.js
 import styles from './chart.module.css'
 
-const chart = () => {
+const Chart = () => {
 
     const [dailyData, setDailyData] = useState([]) // once data is fetched, it is set to the state using hooks
 
@@ -49,4 +49,4 @@ const chart = () => {
     )
 }
 
-export default chart
+export default Chart

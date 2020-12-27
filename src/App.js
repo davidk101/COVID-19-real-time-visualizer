@@ -8,17 +8,20 @@ class App extends React.Component{ /* App.js is the only class-based component f
 
     state = {
         data: {},
-        country: ''
+        country: '' // this value is needed in App as it is the parent of Cards and Chart
     }
     async componentDidMount(){
 
-        const fetchedData = await fetchData()
+        const fetchedData = await fetchData() // PARAM country = undefined i.e. calls original URL  in index.js within API
         this.setState({data: fetchedData})
     }
 
     handleCountryChange = async (country) => {
-        // fetching data and then setting the state
-        console.log(country)
+        // fetching data dynamically i.e. per user click of country selector
+        const fetchedData = await fetchData(country)
+
+        // setting state
+        this.setState({data: fetchedData, country: country})
     }
 
     render(){

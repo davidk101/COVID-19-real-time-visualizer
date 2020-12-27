@@ -3,7 +3,7 @@ import {NativeSelect, FormControl} from "@material-ui/core"
 import styles from './country.module.css'
 import {fetchCountries} from '../../api'
 
-const country = ({handleCountryChange}) => { // makes use of prop
+const Country = ({handleCountryChange}) => { // makes use of prop
 
     const [fetchedCountries, setFetchedCountries] = useState([])
 
@@ -23,4 +23,4 @@ const country = ({handleCountryChange}) => { // makes use of prop
     )
 }
 
-export default country
+export default Country

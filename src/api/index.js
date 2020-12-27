@@ -1,10 +1,16 @@
 import axios from 'axios' // makes API requests
 
-const URL = ''
+const URL = 'https://covid19.mathdro.id/api'
 
-export const fetchData = async () => {
+export const fetchData = async (country) => {
+
+    let changeableURL = URL
+
+    if(country){
+        changeableURL = `${URL}/countries/${country}`
+    }
     try{
-        const {data:{confirmed, recovered, deaths, lastUpdate}} = await axios.get(URL) // destructuring data to retrieve only the data keys needed
+        const {data:{confirmed, recovered, deaths, lastUpdate}} = await axios.get(changeableURL) // destructuring data to retrieve only the data keys needed
 
         const modifiedData = {
             confirmed, // for identical key and values, values can be omitted

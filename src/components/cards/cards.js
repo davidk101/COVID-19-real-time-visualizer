@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card, CardContent, Typography, Grid } from 'material-ui'
+import { Card, CardContent, Typography, Grid } from '@material-ui/core'
 import styles from './cards.module.css'
 import CountUp from "react-countup" // counter animation
 import cx from 'classnames' // links classes together to apply styling for  multiple classes
