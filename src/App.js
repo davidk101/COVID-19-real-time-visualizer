@@ -3,6 +3,7 @@ import {cards, chart, country} from './components' // only available through exp
 import styles from './App.module.css'
 import {fetchData} from "./api"; // searches index.js by default unless otherwise specified
 // braces necessary for named functions
+
 class App extends React.Component{ /* App.js is the only class-based component file in our project - the rest make use of functional-based components i.e. hooks */
 
     state = {
