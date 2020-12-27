@@ -8,12 +8,17 @@ class App extends React.Component{ /* App.js is the only class-based component f
 
     state = {
         data: {},
-
+        country: ''
     }
     async componentDidMount(){
 
         const fetchedData = await fetchData()
         this.setState({data: fetchedData})
+    }
+
+    handleCountryChange = async (country) => {
+        // fetching data and then setting the state
+        console.log(country)
     }
 
     render(){
@@ -22,8 +27,8 @@ class App extends React.Component{ /* App.js is the only class-based component f
 
         return(
         <div className = {styles.container}>
-            <cards data = {data}/> {/* passing data as props to 'cards' component*/}
-            <country />
+            <cards data = {data}/> {/* passing data as prop to 'cards' component*/}
+            <country handleCountryChange = {this.handleCountryChange}/> {/* passing method as prop to 'cards' component*/}
             <chart />
         </div>
         )

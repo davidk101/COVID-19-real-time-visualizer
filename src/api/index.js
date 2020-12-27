@@ -35,3 +35,13 @@ export const fetchDailyData = async () =>{
 
     }
 }
+
+export const fetchCountries = async () => {
+
+    try{
+        const {data : {countries}} = await axios.get(`${URL}/countries`) // destructuring data from response and destructuring countries from data
+        return countries.map((country) => country.name) // ensuring only name is returned - ignoring iso2 and iso3 country info
+    }catch(error){
+
+    }
+}
