@@ -1,4 +1,4 @@
-##COVID-19 Voice Assistant & Real-Time Visualizer
+## COVID-19 Voice Assistant & Real-Time Visualizer
 
 ### Available Scripts
 In the project directory, you can run:
