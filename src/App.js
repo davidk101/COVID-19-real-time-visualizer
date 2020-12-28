@@ -26,16 +26,16 @@ class App extends React.Component{ /* App.js is the only class-based component f
 
     render(){
 
-        const {data} = this.state // destructuring 'data'
+        const {data, country} = this.state // destructuring data and country from the state
 
         return(
         <div className = {styles.container}>
             <Cards data = {data} /> {/* passing data as prop to 'cards' component*/}
             <Country handleCountryChange = {this.handleCountryChange} /> {/* passing method as prop to 'cards' component*/}
-            <Chart />
+            <Chart data = {data} country = {country} />
         </div>
         )
     }
 }
 
-export default App
+export default App;
