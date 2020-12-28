@@ -1,7 +1,7 @@
 import React from 'react'
-import {Cards, Chart, Country} from './components' // only available through export from index.js
+import { Cards, Chart, Country } from './components' // only available through export from index.js
 import styles from './App.module.css'
-import {fetchData} from "./api"; // searches index.js by default unless otherwise specified
+import { fetchData } from "./api" // searches index.js by default unless otherwise specified
 // braces necessary for named functions
 
 class App extends React.Component{ /* App.js is the only class-based component file in our project - the rest make use of functional-based components i.e. hooks */
@@ -30,8 +30,8 @@ class App extends React.Component{ /* App.js is the only class-based component f
 
         return(
         <div className = {styles.container}>
-            <Cards data = {data}/> {/* passing data as prop to 'cards' component*/}
-            <Country handleCountryChange = {this.handleCountryChange}/> {/* passing method as prop to 'cards' component*/}
+            <Cards data = {data} /> {/* passing data as prop to 'cards' component*/}
+            <Country handleCountryChange = {this.handleCountryChange} /> {/* passing method as prop to 'cards' component*/}
             <Chart />
         </div>
         )

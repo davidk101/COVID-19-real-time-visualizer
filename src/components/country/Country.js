@@ -1,7 +1,7 @@
-import React, {useState, useEffect} from 'react'
-import {NativeSelect, FormControl} from "@material-ui/core"
+import React, {useState, useEffect } from 'react'
+import { NativeSelect, FormControl } from "@material-ui/core"
 import styles from './Country.module.css'
-import {fetchCountries} from '../../api'
+import { fetchCountries } from '../../api'
 
 const Country = ({handleCountryChange}) => { // makes use of prop
 
@@ -9,7 +9,7 @@ const Country = ({handleCountryChange}) => { // makes use of prop
 
     useEffect(() => { // useEffect takes in a call-back
         const fetchAPI = async () => {
-            setFetchedCountries(await fetchCountries)
+            setFetchedCountries(await fetchCountries()) // DEBUG:  fetchCountries() -  NOT just 'fetchCountries' - setFetchedCountries is expecting an array not an object
         }
         fetchAPI()
     }, [setFetchedCountries]) // second param is necessary - changes only when setFetchedCountries changes thereby enabling to pick different countries
