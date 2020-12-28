@@ -6,7 +6,7 @@ export const fetchData = async (country) => {
 
     let changeableURL = URL
 
-    if(country){
+    if(country){ // if country is an empty string - regular API URL is called i.e. for 'global' data
         changeableURL = `${URL}/countries/${country}`
     }
     try{
