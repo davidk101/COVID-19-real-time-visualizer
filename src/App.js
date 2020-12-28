@@ -3,6 +3,7 @@ import { Cards, Chart, Country } from './components' // only available through e
 import styles from './App.module.css'
 import { fetchData } from "./api" // searches index.js by default unless otherwise specified
 // braces necessary for named functions
+import banner from './images/banner.png'
 
 class App extends React.Component{ /* App.js is the only class-based component file in our project - the rest make use of functional-based components i.e. hooks */
 
@@ -30,6 +31,7 @@ class App extends React.Component{ /* App.js is the only class-based component f
 
         return(
         <div className = {styles.container}>
+            <img src = {banner}/>
             <Cards data = {data} /> {/* passing data as prop to 'cards' component*/}
             <Country handleCountryChange = {this.handleCountryChange} /> {/* passing method as prop to 'cards' component*/}
             <Chart data = {data} country = {country} />
