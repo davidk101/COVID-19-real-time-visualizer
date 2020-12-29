@@ -19,21 +19,26 @@ const Chart = ({data: { confirmed, deaths, recovered}, country}) => { // destruc
     // returns an array with 71 objects from dailyData API call
     const lineChart = (
 
-        dailyData[0] ? (<Line
+        dailyData[0] ? (
+            <Line
                 data = {{ // two braces for dynamic object
                 labels: dailyData.map(({date}) => date), // returns an array -  displaying dates from dailyData and displaying them as labels after destructuring the date
                 datasets: [{
                     data: dailyData.map(({confirmed}) => confirmed), // note: dailyData is not a function but rather an array and hence we map
-                    label: 'Infected',
-                    borderColor: '#3333ff',
+                    label: 'Total cases',
+                    borderColor: 'rgb(108, 92, 231)',
                     fill:true
                 }, {
                     data: dailyData.map(({deaths}) => deaths),
                     label: 'Deaths',
-                    borderColor: 'rgba(255,0,0,0.5)',
+                    borderColor: 'rgb(225, 112, 85)',
                     fill:true
-                }],
-                }}
+                }, {
+                    data: dailyData.map(({recovered}) => recovered),
+                    label: 'Recovered',
+                    borderColor: 'rgb(0, 184, 148)',
+                    fill:true
+                }]}}
             />) : null
     )
 /* class-based equivalent
@@ -45,12 +50,12 @@ const Chart = ({data: { confirmed, deaths, recovered}, country}) => { // destruc
     const barChart = (
         confirmed ? (
             <Bar data = {{
-                labels: ['Infected', 'Recovered', 'Deaths'],
+                labels: ['Total cases', 'Recovered', 'Deaths'],
                 datasets: [{
                     label: 'People',
-                    backgroundColor: ['rgba(0, 0, 255, 0.5)', 'rgba(0, 255, 0, 0.5)', 'rgba(255, 0, 0, 0.5)'],
+                    backgroundColor: ['rgba(108, 92, 231,0.5)', 'rgba(0, 184, 148,0.5)', 'rgba(225, 112, 85,0.5)'],
                     data: [confirmed.value, recovered.value, deaths.value]
-                },
+                }
                 ],
             }}
                  options = {{legend: {display: false}, title: {display: true, text:`Current state in ${country}`}}}>
@@ -65,6 +70,7 @@ const Chart = ({data: { confirmed, deaths, recovered}, country}) => { // destruc
             {country ? barChart: lineChart }
         </div>
     )
+
 }
 
 export default Chart

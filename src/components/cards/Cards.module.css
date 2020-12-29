@@ -1,21 +1,29 @@
 .container{
-    margin: 50px 0;
+    margin: 10px 0;
+    width: 1000px;
 }
 
 .card {
-    margin: 0 2% !important;  /* !important needed since .card is a materialUI element is not being styled inline*/
+    margin: 30px 0 !important; /* !important needed since .card is a materialUI element is not being styled inline*/
 }
 
 .infected {
-    border-bottom: 10px solid rgba(0,0,255,0.5);
+    border-top: 10px solid rgb(108, 92, 231);
+    border-bottom: 10px solid rgb(108, 92, 231);
 }
 
+.active{
+    border-top: 10px solid rgb(9, 132, 227);
+    border-bottom: 10px solid rgb(9, 132, 227);
+}
 .recovered {
-    border-bottom: 10px solid rgba(0,255,0,0.5)
+    border-top: 10px solid rgb(0, 184, 148);
+    border-bottom: 10px solid rgb(0, 184, 148);
 }
 
 .deaths {
-    border-bottom: 10px solid rgba(255,0,0,0.5)
+    border-top: 10px solid rgb(225, 112, 85);
+    border-bottom: 10px solid rgb(225, 112, 85);
 }
 
 @media (max-width: 770px){ /* for mobile devices - top/bottom padding between cards */

@@ -1,7 +1,8 @@
 .container{
     display: flex;
     justify-content: center;
-    width: 85%;
+    width: 75%;
+    margin: 30px;
 }
 
 @media (max-width: 770px){ /* for mobile devices - making chart larger */
