@@ -33,12 +33,12 @@ const Chart = ({data: { confirmed, deaths, recovered}, country}) => { // destruc
                         label: 'Deaths',
                         borderColor: 'rgb(225, 112, 85)',
                         fill: true
-                    }, {
+                    }/*, {
                         data: dailyData.map(({recovered}) => recovered),
                         label: 'Recovered',
                         borderColor: 'rgb(0, 184, 148)',
                         fill: true
-                    }]
+                    }*/]
                 }}
                 options={{
                     scales: {

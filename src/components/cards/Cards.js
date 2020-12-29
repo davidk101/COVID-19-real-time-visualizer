@@ -27,20 +27,7 @@ const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => { // d
                         </Typography>
                     </CardContent>
                 </Grid>
-                <Grid item component = {Card} xs = {12} md = {3} className = {cx(styles.card, styles.active)}>
-                    <CardContent>
-                        <Typography color = "textPrimary" gutterBottom>
-                            Active
-                        </Typography>
-                        <Typography variant = "h5">
-                            <CountUp start = {0} end = {confirmed.value - recovered.value - deaths.value} duration = {2.5} separator = ",">
-                            </CountUp>
-                        </Typography>
-                        <Typography color = "textSecondary">
-                            {`Updated: ${new Date(lastUpdate).toDateString()}`} {/* human readable format of lastUpdate  */}
-                        </Typography>
-                    </CardContent>
-                </Grid>
+
                 <Grid item component = {Card} xs = {12} md = {3} className = {cx(styles.card, styles.recovered)}>
                     <CardContent>
                         <Typography color = "textPrimary" gutterBottom>
@@ -55,6 +42,22 @@ const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => { // d
                         </Typography>
                     </CardContent>
                 </Grid>
+
+                <Grid item component = {Card} xs = {12} md = {3} className = {cx(styles.card, styles.active)}>
+                    <CardContent>
+                        <Typography color = "textPrimary" gutterBottom>
+                            Active
+                        </Typography>
+                        <Typography variant = "h5">
+                            <CountUp start = {0} end = {confirmed.value - recovered.value - deaths.value} duration = {2.5} separator = ",">
+                            </CountUp>
+                        </Typography>
+                        <Typography color = "textSecondary">
+                            {`Updated: ${new Date(lastUpdate).toDateString()}`} {/* human readable format of lastUpdate  */}
+                        </Typography>
+                    </CardContent>
+                </Grid>
+
                 <Grid item component = {Card} xs = {12} md = {3} className = {cx(styles.card, styles.deaths)}>
                     <CardContent>
                         <Typography color = "textPrimary" gutterBottom>

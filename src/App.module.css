@@ -4,14 +4,25 @@ body{
 
 .container {
     display:flex;
-    align-items:center;
-    justify-content: center;
+    align-items: center;
+    justify-content: left;
     flex-direction: column; /* places components beneath each other */
 }
 
+.banner{
+    display: block;
+}
 .image{
     width: 430px;
     margin: 10px;
+    border: 1px solid black;
+    display: inline-block;
+}
+
+.more{
+    display: inline-block;
+    border: 1px solid black;
+    color: rgb(108, 92, 231);
 }
 
 @media (max-width: 770px){  /* for mobile devices */

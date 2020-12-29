@@ -31,7 +31,10 @@ class App extends React.Component{ /* App.js is the only class-based component f
 
         return(
         <div className = {styles.container}>
-            <img className = {styles.image} src = {banner} alt = "COVID-19 Voice Assistant and Real Time Visualizer" />
+            <div className = {styles.banner}>
+                <img className = {styles.image} src = {banner} alt = "COVID-19 Voice Assistant and Real Time Visualizer" />
+            </div>
+
             <Cards data = {data}  /> {/* passing data as prop to 'Cards' component*/}
             <Country  handleCountryChange = {this.handleCountryChange} /> {/* passing method as prop to 'Country' component*/}
             <Chart  data = {data} country = {country} /> {/* passing data and country as prop to 'Chart' component*/}

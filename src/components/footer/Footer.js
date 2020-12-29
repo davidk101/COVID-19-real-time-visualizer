@@ -4,9 +4,11 @@ import styles from './Footer.module.css'
 const Footer = () => {
     return(
         <div className = {styles.container}>
-            <footer>
-                COVID-19 Voice Assistant & Real-Time Visualizer by David Kumar
-            </footer>
+            <a  href = " https://coronavirus.jhu.edu/map.html">
+                <div>
+                    <i className = "fa fa-info-circle"></i> Data extracted from John Hopkins Coronavirus Resource Center
+                </div>
+            </a>
         </div>
     )
 }
