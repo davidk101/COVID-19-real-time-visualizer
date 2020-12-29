@@ -15,7 +15,6 @@ body{
 .image{
     width: 430px;
     margin: 10px;
-    border: 1px solid black;
     display: inline-block;
 }
 
