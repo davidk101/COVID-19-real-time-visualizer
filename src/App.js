@@ -1,5 +1,5 @@
 import React from 'react'
-import { Cards, Chart, Country } from './components' // only available through export from index.js
+import { Cards, Chart, Country, Footer } from './components' // only available through export from index.js
 import styles from './App.module.css'
 import { fetchData } from "./api" // searches index.js by default unless otherwise specified
 // braces necessary for named functions
@@ -35,6 +35,7 @@ class App extends React.Component{ /* App.js is the only class-based component f
             <Cards data = {data}  /> {/* passing data as prop to 'Cards' component*/}
             <Country  handleCountryChange = {this.handleCountryChange} /> {/* passing method as prop to 'Country' component*/}
             <Chart  data = {data} country = {country} /> {/* passing data and country as prop to 'Chart' component*/}
+        <Footer />
         </div>
         )
     }

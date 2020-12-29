@@ -19,37 +19,54 @@ const Chart = ({data: { confirmed, deaths, recovered}, country}) => { // destruc
     // returns an array with 71 objects from dailyData API call
     const lineChart = (
 
-        dailyData[0] ? (
+        dailyData[0] ? ( // ensuring there's some defined data
             <Line
-                data = {{ // two braces for dynamic object
-                labels: dailyData.map(({date}) => date), // returns an array -  displaying dates from dailyData and displaying them as labels after destructuring the date
-                datasets: [{
-                    data: dailyData.map(({confirmed}) => confirmed), // note: dailyData is not a function but rather an array and hence we map
-                    label: 'Total cases',
-                    borderColor: 'rgb(108, 92, 231)',
-                    fill:true
-                }, {
-                    data: dailyData.map(({deaths}) => deaths),
-                    label: 'Deaths',
-                    borderColor: 'rgb(225, 112, 85)',
-                    fill:true
-                }, {
-                    data: dailyData.map(({recovered}) => recovered),
-                    label: 'Recovered',
-                    borderColor: 'rgb(0, 184, 148)',
-                    fill:true
-                }]}}
+                data={{ // two braces for dynamic object
+                    labels: dailyData.map(({date}) => date), // returns an array -  displaying dates from dailyData and displaying them as labels after destructuring the date
+                    datasets: [{
+                        data: dailyData.map(({confirmed}) => confirmed), // note: dailyData is not a function but rather an array and hence we map
+                        label: 'Total cases',
+                        borderColor: 'rgb(108, 92, 231)',
+                        fill: true
+                    }, {
+                        data: dailyData.map(({deaths}) => deaths),
+                        label: 'Deaths',
+                        borderColor: 'rgb(225, 112, 85)',
+                        fill: true
+                    }, {
+                        data: dailyData.map(({recovered}) => recovered),
+                        label: 'Recovered',
+                        borderColor: 'rgb(0, 184, 148)',
+                        fill: true
+                    }]
+                }}
+                options={{
+                    scales: {
+                        xAxes: [{
+                            gridLines: {
+                                display: false
+                            }
+                        }],
+                        yAxes: [{
+                            gridLines: {
+                                display: true
+                            },
+                            position: 'right'
+                        }]
+                    }
+                }
+                }
             />) : null
     )
-/* class-based equivalent
-    state = {
-        dailyData: {}
-    }
-*/
+    /* class-based equivalent
+        state = {
+            dailyData: {}
+        }
+    */
 
     const barChart = (
         confirmed ? (
-            <Bar data = {{
+            <Bar data={{
                 labels: ['Total cases', 'Recovered', 'Deaths'],
                 datasets: [{
                     label: 'People',
@@ -58,19 +75,18 @@ const Chart = ({data: { confirmed, deaths, recovered}, country}) => { // destruc
                 }
                 ],
             }}
-                 options = {{legend: {display: false}, title: {display: true, text:`Current state in ${country}`}}}>
+                 options={{legend: {display: false}, title: {display: true, text: `Current state in ${country}`}}}>
 
             </Bar>
         ) : null
     )
 
     return (
-        <div className = {styles.container}>
+        <div className={styles.container}>
             {/*{lineChart}*/}
-            {country ? barChart: lineChart }
+            {country ? barChart : lineChart}
         </div>
     )
-
 }
 
 export default Chart

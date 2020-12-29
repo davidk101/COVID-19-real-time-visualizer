@@ -4,7 +4,7 @@
 }
 
 .card {
-    margin: 30px 0 !important; /* !important needed since .card is a materialUI element is not being styled inline*/
+    margin: 30px 5% !important; /* !important needed since .card is a materialUI element is not being styled inline*/
 }
 
 .infected {
@@ -15,6 +15,7 @@
 .active{
     border-top: 10px solid rgb(9, 132, 227);
     border-bottom: 10px solid rgb(9, 132, 227);
+
 }
 .recovered {
     border-top: 10px solid rgb(0, 184, 148);

@@ -10,13 +10,14 @@ export const fetchData = async (country) => {
         changeableURL = `${URL}/countries/${country}`
     }
     try{
-        const {data:{confirmed, recovered, deaths, lastUpdate}} = await axios.get(changeableURL) // destructuring data to retrieve only the data keys needed
+        const {data:{confirmed, recovered, deaths, lastUpdate, reportDate}} = await axios.get(changeableURL) // destructuring data to retrieve only the data keys needed
 
         const modifiedData = {
             confirmed, // for identical key and values, values can be omitted
             recovered,
             deaths,
-            lastUpdate
+            lastUpdate,
+            reportDate
         }
 
         return modifiedData
@@ -33,7 +34,8 @@ export const fetchDailyData = async () =>{
         const modifiedData = data.map(dailyData => ({ // mapping through the array and returning an object
             confirmed: dailyData.confirmed.total,
             deaths: dailyData.deaths.total,
-            date: dailyData.reportDate
+            recovered: dailyData.recovered.total,
+            date: dailyData.reportDate,
         }))
 
         return modifiedData
