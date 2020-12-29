@@ -1,6 +1,7 @@
 import axios from 'axios' // makes API requests
 
 const URL = 'https://covid19.mathdro.id/api'
+const URL_US = 'https://api.covidtracking.com/v1/us/daily.json'
 
 export const fetchData = async (country) => {
 
@@ -35,7 +36,7 @@ export const fetchDailyData = async () =>{
             confirmed: dailyData.confirmed.total,
             deaths: dailyData.deaths.total,
             recovered: dailyData.recovered.total,
-            date: dailyData.reportDate,
+            date: dailyData.reportDate
         }))
 
         return modifiedData
@@ -43,6 +44,25 @@ export const fetchDailyData = async () =>{
         return error
     }
 }
+
+export const fetchDailyDataUS  = async () =>{
+    try{
+        const {data} = await axios.get(URL_US) // destructuring 'data'
+
+        const modifiedData = data.map(({positive, recovered, death, dateChecked: date }) => ({  // mapping through the array and returning an object
+            confirmed: positive,
+            recovered,
+            deaths: death,
+            date
+        }))
+
+        return modifiedData
+
+    }catch(error){
+        return error
+    }
+}
+
 
 export const fetchCountries = async () => {
 
