@@ -16,7 +16,8 @@ const Country = ({handleCountryChange}) => { // makes use of prop
     return (
         <FormControl className = {styles.formControl}>
             <NativeSelect defaultValue = "" onChange = {(e) => handleCountryChange(e.target.value)}> {/* callback function with an event and then calling function from props  */}
-                <option value = ""> Global</option> {/* empty string will mean country = '' in Chart.js*/}
+                <option value = ""> Worldwide</option> {/* empty string will mean country = '' in Chart.js*/}
+                <option value = "United States"> United States</option>
                 {fetchedCountries.map((country, i) => <option key = {i} value = {country}>{country}</option>)} {/* adding 181 countries by mapping */}
             </NativeSelect>
         </FormControl>
