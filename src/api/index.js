@@ -2,30 +2,45 @@ import axios from 'axios' // makes API requests
 
 const URL = 'https://covid19.mathdro.id/api'
 const URL_US = 'https://api.covidtracking.com/v1/us/daily.json'
+let sentinel = false;
 
 export const fetchData = async (country) => {
 
     let changeableURL = URL
 
-    if(country){ // if country is an empty string - regular API URL is called i.e. for 'global' data
+    if(country && country !== 'United States'){
         changeableURL = `${URL}/countries/${country}`
     }
-    try{
-        const {data:{confirmed, recovered, deaths, lastUpdate, reportDate}} = await axios.get(changeableURL) // destructuring data to retrieve only the data keys needed
 
-        const modifiedData = {
-            confirmed, // for identical key and values, values can be omitted
-            recovered,
-            deaths,
-            lastUpdate,
-            reportDate
-        }
-
-        return modifiedData
-
-    }catch(error){
-        return error
+    else if(country === 'United States'){
+        changeableURL = `${URL_US}`
+        sentinel = true
     }
+
+    // IMPLICIT ELSE: country = '' i.e. global data displayed
+
+    if (sentinel){
+
+    }
+    else{
+        try{
+            const {data:{confirmed, recovered, deaths, lastUpdate, reportDate}} = await axios.get(changeableURL) // destructuring data to retrieve only the data keys needed
+
+            const modifiedData = {
+                confirmed, // for identical key and values, values can be omitted
+                recovered,
+                deaths,
+                lastUpdate,
+                reportDate
+            }
+
+            return modifiedData
+
+        }catch(error){
+            return error
+        }
+    }
+
 }
 
 export const fetchDailyData = async () =>{

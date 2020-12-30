@@ -9,7 +9,7 @@ class App extends React.Component{ /* App.js is the only class-based component f
 
     state = {
         data: {},
-        country: '' // this value is needed in App as it is the parent of Cards and Chart
+        country: '' // this value is needed in App.js as it is the parent of Cards.js and Chart.js (global scope)
     }
     async componentDidMount(){
 
