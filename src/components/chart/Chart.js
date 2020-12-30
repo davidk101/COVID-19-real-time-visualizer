@@ -3,7 +3,7 @@ import { fetchDailyData, fetchDailyDataUS } from "../../api";
 import { Line, Bar } from 'react-chartjs-2' // react wrapper for Chart.js
 import styles from './Chart.module.css'
 
-const Chart = ({data: { confirmed, deaths, recovered}, country}) => { // destructuring data
+const Chart = ({data: { confirmed, deaths, recovered}, country}) => { // destructuring data and country and then another destructuring takes place
 
     const [dailyData, setDailyData] = useState([]) // once data is fetched, it is set to the state using hooks
 
