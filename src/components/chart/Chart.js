@@ -134,12 +134,16 @@ const Chart = ({data: { confirmed, deaths, recovered}, country}) => { // destruc
         ) : null
     )
 
+
     return (
         <div className={styles.container}>
             {/*{lineChart}*/}
-            {country ? barChart : lineChartGlobal}
+            {country === '' ? lineChartGlobal : null}
+            {country === 'United States' ? lineChartUS : null }
+            {country !== '' && country !== 'United States' ? barChart : null}
+
         </div>
     )
 }
 
-export default Chart
+export default Chart;

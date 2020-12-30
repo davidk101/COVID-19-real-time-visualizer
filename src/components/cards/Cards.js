@@ -7,7 +7,7 @@ import cx from 'classnames' // links classes together to apply styling for  mult
 const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => { // destructuring data and then another destructuring
 
     if(!confirmed){ // data.confirmed if not destructured
-        return 'Loading data from API'
+        return 'Check Cards.js API GET request'
     }
 
     return (
