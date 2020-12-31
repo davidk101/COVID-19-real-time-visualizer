@@ -1,4 +1,8 @@
 .formControl{
-    width: 30%;
+    width: 50%;
     margin: 30px !important; /* ! important needed as styling not done in-line*/
+}
+
+div{
+    margin: 7px;
 }
