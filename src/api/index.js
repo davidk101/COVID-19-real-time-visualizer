@@ -31,7 +31,7 @@ export const fetchData = async (country) => {
                 lastUpdate: lastUpdate.date
             }
 
-            console.log(modifiedData)
+            //console.log(modifiedData)
 
             return modifiedData
 
@@ -52,7 +52,7 @@ export const fetchData = async (country) => {
                 lastUpdate
             }
 
-            console.log(modifiedData)
+            //console.log(modifiedData)
             return modifiedData
 
         }catch(error){
