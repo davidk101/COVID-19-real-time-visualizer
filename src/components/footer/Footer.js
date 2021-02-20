@@ -4,7 +4,7 @@ import styles from './Footer.module.css'
 const Footer = () => {
     return(
         <div className = {styles.container}>
-            <a  href = "https://github.com/CSSEGISandData/COVID-19">
+            <a  target="_blank" href = "https://github.com/CSSEGISandData/COVID-19">
                 <div>
                     <i className = "fa fa-info-circle"></i>
                     Data extracted from the John Hopkins University CSSE COVID-19 Data Repository
@@ -15,10 +15,13 @@ const Footer = () => {
                 </div>
             </a>
 
-            <div>
-                <i className="fas fa-user"></i>
-                Developed by David Kumar
-            </div>
+            <a target = "_blank" href = "https://www.linkedin.com/in/davidkumar101/">
+                <div>
+                    <i className="fas fa-user"></i>
+                    Developed by David Kumar
+                </div>
+            </a>
+
         </div>
     )
 }
